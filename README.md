@@ -1,73 +1,42 @@
-# React + TypeScript + Vite
+# Subash Sunuwar - Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A custom-built, highly optimized personal portfolio and professional brand website for Subash Sunuwar, an AI Engineer & Automation Specialist.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack Architecture
+This project is completely custom-coded tailored to strict design requirements. It does not rely on any proprietary site builders or theme templates.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Framework**: React 18
+- **Build Tool**: Vite (Lightning-fast frontend tooling)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4 (Custom theme architecture implemented directly in `src/index.css`)
+- **Animations**: Framer Motion (Scroll-triggered cinematic reveals, spring physics, dynamic blurs)
+- **Icons**: Lucide React
 
-## React Compiler
+## ⚡ Custom Implementations 
+Instead of dropping in template plugins, this codebase maintains lean logic custom-built for specific aesthetic behavior:
+- **`Typewriter.tsx`**: A zero-dependency typing text effect built exclusively with React Hooks.
+- **`SectionWrapper.tsx`**: A global abstraction component passing strict view-port observer triggers down to nested stagger animations.
+- **`Navbar.tsx`**: A responsive, state-driven navigation component reacting smoothly to client window scroll listeners.
+- **`utils.ts`**: Safely merges deep utility styling classes without collision natively.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Development Setup
 
-## Expanding the ESLint configuration
+To run the project locally on your machine:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. **Install Node.js & Dependencies**
+   Run the following inside the root directory:
+   ```bash
+   npm install
+   ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+2. **Start the Development Server**
+   ```bash
+   npm run dev
+   ```
+   This will start Vite's local development environment (usually accessible via `http://localhost:5173`).
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3. **Production Build**
+   ```bash
+   npm run build
+   ```
+   This compiles and optimizes all React and CSS code perfectly for native deployment on platforms like Vercel, Netlify, or standard NGINX servers.
