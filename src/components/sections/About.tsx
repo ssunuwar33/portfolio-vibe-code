@@ -4,8 +4,12 @@ import { motion } from "framer-motion";
 
 const skillCategories = [
   {
+    title: "💻 Programming",
+    skills: ["Python", "Java", "R", "SQL", "HTML/CSS"]
+  },
+  {
     title: "🤖 AI/LLMs",
-    skills: ["Claude API", "Gemini", "Prompt Engineering", "RAG Pipelines", "NLP", "AI Agents"]
+    skills: ["Claude API", "Gemini", "Prompt Engineering", "NLP", "AI Agents"]
   },
   {
     title: "🧠 ML",
@@ -21,7 +25,7 @@ const skillCategories = [
   },
   {
     title: "🛠️ Tools",
-    skills: ["REST APIs", "Git", "Docker", "AWS/GCP", "Notion CRM"]
+    skills: ["REST APIs", "Git", "Docker", "Notion CRM"]
   }
 ];
 
