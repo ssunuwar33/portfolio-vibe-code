@@ -31,16 +31,10 @@ const skillCategories = [
 
 export function About() {
   return (
-    <SectionWrapper id="about">
-      <motion.div variants={itemVariants} className="mb-8">
-        <h2 className="text-3xl md:text-4xl font-bold font-mono mb-2">
-          <span className="text-[var(--color-violet)]">01.</span> About Me
-        </h2>
-        <div className="w-20 h-1 bg-[var(--color-cyan)]"></div>
-      </motion.div>
-
+    <SectionWrapper id="about" title="OPERATIVE" cyanWord="BIO">
       <div className="grid md:grid-cols-2 gap-12">
-        <motion.div variants={itemVariants} className="text-gray-400 space-y-4">
+        <motion.div variants={itemVariants} className="text-[var(--color-hud-text)] space-y-4 font-rajdhani text-lg hud-panel p-8 hud-brackets">
+          <div className="hud-panel-highlight"></div>
           <p>
             I am an AI Engineer & Automation Specialist based in London.
             I hold an MSc in Data Science from the University of Greenwich (Merit), with deep expertise in optimizing real-world workflows through intelligent systems.
@@ -53,13 +47,14 @@ export function About() {
           </p>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="space-y-8">
+        <motion.div variants={itemVariants} className="space-y-8 hud-panel p-8 hud-brackets">
+          <div className="hud-panel-highlight"></div>
           {skillCategories.map((cat) => (
             <div key={cat.title}>
-              <h3 className="text-white font-mono font-bold mb-4">{cat.title}</h3>
-              <div className="flex flex-wrap gap-3">
+              <h3 className="text-[var(--color-hud-cyan)] font-mono text-sm tracking-widest uppercase mb-3 drop-shadow-[0_0_5px_currentColor]">{cat.title}</h3>
+              <div className="flex flex-wrap gap-2">
                 {cat.skills.map((skill) => (
-                  <SkillBadge key={skill} label={skill} />
+                  <SkillBadge key={skill} label={skill} categoryTitle={cat.title} />
                 ))}
               </div>
             </div>

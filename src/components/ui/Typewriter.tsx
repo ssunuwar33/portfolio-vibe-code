@@ -50,13 +50,13 @@ export function Typewriter({
   }, [text, isDeleting, loopNum, words, typing, typingSpeed, deletingSpeed, delayBetweenWords]);
 
   return (
-    <span className="inline-flex items-center text-[var(--color-cyan)]">
+    <span className="inline-flex items-center text-inherit">
       <span>{text}</span>
       <motion.span
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ repeat: Infinity, duration: 0.8, ease: "linear" }}
-        className="inline-block w-[3px] h-[1em] ml-1 bg-[var(--color-cyan)]"
+        className="inline-block w-[10px] h-[1em] ml-2 bg-current"
       />
     </span>
   );
