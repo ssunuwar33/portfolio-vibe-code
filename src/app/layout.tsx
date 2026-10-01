@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: "Subash Sunuwar, AI engineer",
   description:
     "AI engineer in London building LLM integrations, workflow automation and computer-vision systems.",
+  icons: { icon: "/favicon.svg" },
   openGraph: {
     type: "website",
     url: "https://ssunuwar33.github.io",
