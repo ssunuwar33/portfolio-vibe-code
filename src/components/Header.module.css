@@ -1,0 +1,47 @@
+.header {
+  padding-block: 28px;
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px 32px;
+}
+
+.wordmark {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  font-stretch: 125%;
+  letter-spacing: -0.01em;
+  line-height: normal;
+  color: var(--ink);
+  text-decoration: none;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+.wordmark:hover { color: var(--ink); }
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 28px;
+}
+
+.nav a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--ink);
+  text-decoration: none;
+}
+.nav a:hover {
+  color: var(--blue-hover);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+}

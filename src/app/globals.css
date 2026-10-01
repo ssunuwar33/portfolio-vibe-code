@@ -1,0 +1,90 @@
+/* ─── Tokens ─────────────────────────────────────────────────────────────── */
+:root {
+  --paper: #F6F7FB;
+  --ink: #111A4F;
+  --blue: #002FA7;
+  --blue-hover: #00227A;
+  --muted: #4F5B98;
+  --muted-on-blue: #BCC6F0;
+  --rule: #D9DEF0;
+  --font: var(--font-archivo), "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --container: 75rem;
+  --pad-x: clamp(1.25rem, 5vw, 4rem);
+  --section-pad: clamp(4rem, 2.5rem + 5vw, 7.5rem);
+}
+
+/* ─── Reset ──────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; padding: 0; margin: 0; }
+
+html { height: 100%; }
+
+body {
+  min-height: 100%;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Selection ──────────────────────────────────────────────────────────── */
+::selection { background: var(--blue); color: var(--paper); }
+
+/* ─── Wrapper ────────────────────────────────────────────────────────────── */
+.wrap {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--pad-x);
+  box-sizing: border-box;
+}
+
+/* ─── Links ──────────────────────────────────────────────────────────────── */
+a {
+  color: var(--blue);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+}
+a:hover { color: var(--blue-hover); }
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+/* ─── Struck "before" values ─────────────────────────────────────────────── */
+s {
+  position: relative;
+  color: var(--muted);
+  text-decoration: none;
+  white-space: nowrap;
+}
+s::after {
+  content: "";
+  position: absolute;
+  left: -0.05em;
+  right: -0.05em;
+  top: 52%;
+  height: 0.08em;
+  min-height: 2px;
+  background: var(--blue);
+  transform-origin: left center;
+}
+
+@keyframes strike {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+
+  @supports (animation-timeline: view()) {
+    s::after {
+      animation: strike linear both;
+      animation-timeline: view();
+      animation-range: entry 100% cover 45%;
+    }
+  }
+}
